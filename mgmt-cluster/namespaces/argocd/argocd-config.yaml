@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+data:
+  admin.enabled: "true"
+  url: "https://argocd-server.argocd.svc.cluster.local/"
+  # accounts.image-updater: "apiKey"
+  # accounts.image-updater.enabled: "true"
+  kustomize.buildOptions: "--enable-helm"
+  configManagementPlugins: |
+    - name: kustomize-v1.0
+      init:
+        command: [kustomize]
+        args: ["build", "--enable-helm"]
+      generate:
+        command: [kustomize]
+        args: ["build", "--enable-helm"]
+      validate:
+        command: [kustomize]
+        args: ["build", "--enable-helm"]
