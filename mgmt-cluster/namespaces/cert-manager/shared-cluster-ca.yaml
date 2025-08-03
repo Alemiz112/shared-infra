@@ -1,0 +1,7 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: shared-cluster-ca
+spec:
+  ca:
+    secretName: shared-selfsigned-ca-cert

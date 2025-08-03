@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: cattle-system
+
+helmCharts:
+  - name: rancher
+    namespace: cattle-system
+    includeCRDs: true
+    releaseName: rancher
+    version: 2.12.0
+    repo: https://releases.rancher.com/server-charts/latest
+    valuesInline:
+      hostname: "rancher.fede.host"
+      replicas: 1

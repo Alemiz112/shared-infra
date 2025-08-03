@@ -3,3 +3,6 @@ kind: Kustomization
 
 resources:
   - argocd.yaml
+  - cattle-system.yaml
+  - traefik-ingress.yaml
+  - cert-manager.yaml

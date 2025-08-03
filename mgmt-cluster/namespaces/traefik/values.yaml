@@ -1,0 +1,10 @@
+deployment:
+  replicas: 1
+providers:
+  kubernetesCRD:
+    allowCrossNamespace: true
+ports:
+  web:
+    exposedPort: 5080
+  websecure:
+    exposedPort: 5443
