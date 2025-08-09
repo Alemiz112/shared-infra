@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+spec:
+  tls:
+    - hosts:
+        - "argo.fede.host"
+      secretName: argo-fede-host-tls
+  rules:
+    - host: argo.fede.host
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443

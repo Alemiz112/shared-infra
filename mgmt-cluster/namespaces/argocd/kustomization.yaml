@@ -7,6 +7,8 @@ resources:
   # Use HA version when you have enough resources to run it
   #  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.12/manifests/ha/install.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.12/manifests/install.yaml
+  - argocd-server-cert.yaml
+  - argocd-ingress.yaml
 
 patches:
   - path: argocd-config.yaml

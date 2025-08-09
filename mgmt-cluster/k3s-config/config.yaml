@@ -1,6 +1,6 @@
 write-kubeconfig-mode: "0644"
 # Use VXLan overlay network for now
-flannel-backend: "vxlan"
+flannel-backend: "host-gw"
 # Use k3s integrated CC as we will not use the cloud provider
 disable-cloud-controller: false
 # Use external cloud provider
@@ -11,9 +11,9 @@ disable-cloud-controller: false
 # Cluster Domain (default: "cluster.local")
 cluster-domain: "mgmt.cluster.fede.host"
 # IPv4/IPv6 network CIDRs to use for pod IPs
-cluster-cidr: "10.42.0.0/16"
+cluster-cidr: "10.0.8.0/22"
 # IPv4/IPv6 network CIDRs to use for service IPs
-service-cidr: "10.43.0.0/16"
+service-cidr: "10.0.12.0/22"
 # A publicly reachable IP
 node-ip: "10.0.0.82"
 node-external-ip: "129.159.194.8"

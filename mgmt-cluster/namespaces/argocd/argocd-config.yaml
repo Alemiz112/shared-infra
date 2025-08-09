@@ -7,7 +7,7 @@ metadata:
   name: argocd-cm
 data:
   admin.enabled: "true"
-  url: "https://argocd-server.argocd.svc.cluster.local/"
+  url: "https://argo.fede.host/"
   # accounts.image-updater: "apiKey"
   # accounts.image-updater.enabled: "true"
   kustomize.buildOptions: "--enable-helm"

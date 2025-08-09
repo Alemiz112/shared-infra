@@ -8,3 +8,11 @@ ports:
     exposedPort: 5080
   websecure:
     exposedPort: 5443
+additionalArguments:
+  - "--serversTransport.rootCAs=/certs/ca.crt"
+  # Traefik sometimes accesses pod ips directly
+  - "--serversTransport.insecureSkipVerify=true"
+volumes:
+  - name: shared-selfsigned-ca-cert
+    mountPath: "/certs"
+    type: secret

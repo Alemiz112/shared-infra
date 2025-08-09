@@ -20,7 +20,8 @@ spec:
   privateKey:
     # By default, the private key won't be rotated automatically.
     rotationPolicy: Always
-  # secretTemplate:
-    # annotations:
-      # replicator.v1.mittwald.de/replication-allowed: "true"
-      # replicator.v1.mittwald.de/replication-allowed-namespaces: ""
+  secretTemplate:
+    annotations:
+      replicator.v1.mittwald.de/replication-allowed: "true"
+      replicator.v1.mittwald.de/replicate-to-matching: >
+        import-shared-ca=true
