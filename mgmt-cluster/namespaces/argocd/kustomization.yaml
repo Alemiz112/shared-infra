@@ -7,6 +7,10 @@ resources:
   # Use HA version when you have enough resources to run it
   #  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.12/manifests/ha/install.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.12/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.0.12/examples/k8s-rbac/argocd-server-applications/argocd-server-rbac-clusterrolebinding.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.0.12/examples/k8s-rbac/argocd-server-applications/argocd-server-rbac-clusterrole.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.0.12/examples/k8s-rbac/argocd-server-applications/argocd-notifications-controller-rbac-clusterrolebinding.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.0.12/examples/k8s-rbac/argocd-server-applications/argocd-notifications-controller-rbac-clusterrole.yaml
   - argocd-server-cert.yaml
   - argocd-ingress.yaml
   - argocd-cmd-params-cm.yaml

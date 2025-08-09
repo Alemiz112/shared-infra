@@ -5,7 +5,7 @@ metadata:
 spec:
   matchSelector:
     harvesterhci.io/managed: "true"
-  filename: 90-cluster-domain
+  filename: 90-cluster-domain.yaml
   contents: |
     stages:
       boot:

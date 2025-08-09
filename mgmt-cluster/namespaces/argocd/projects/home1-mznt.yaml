@@ -11,3 +11,8 @@ spec:
       name: home1.mznt.fede.host
     - namespace: "mznt-home1-gitops"
       server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceNamespaces:
+    - "mznt-home1-gitops"
