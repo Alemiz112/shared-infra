@@ -36,7 +36,7 @@ target/
 charts/
 
 # Ignore output files
-out.yaml
+*out.yaml
 
 # Ignore sealed-secret.pem
 sealed-secret.pem
