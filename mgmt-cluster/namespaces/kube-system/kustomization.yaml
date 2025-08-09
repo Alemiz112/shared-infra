@@ -7,3 +7,5 @@ resources:
   # kubernetes-replicator
   - https://raw.githubusercontent.com/mittwald/kubernetes-replicator/refs/tags/v2.12.0/deploy/rbac.yaml
   - https://raw.githubusercontent.com/mittwald/kubernetes-replicator/refs/tags/v2.12.0/deploy/deployment.yaml
+  # sealed secrets
+  - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.30.0/controller.yaml
