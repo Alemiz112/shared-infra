@@ -1,0 +1,13 @@
+apiVersion: harvesterhci.io/v1beta1
+kind: Addon
+metadata:
+  labels:
+    addon.harvesterhci.io/experimental: 'true'
+  name: harvester-csi-driver-lvm
+  namespace: harvester-system
+spec:
+  chart: harvester-csi-driver-lvm
+  enabled: true
+  repo: https://charts.harvesterhci.io
+  valuesContent: ''
+  version: 0.1.5

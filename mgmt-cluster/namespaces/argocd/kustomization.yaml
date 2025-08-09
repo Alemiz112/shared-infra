@@ -9,7 +9,10 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.12/manifests/install.yaml
   - argocd-server-cert.yaml
   - argocd-ingress.yaml
+  - argocd-cmd-params-cm.yaml
   - repos
+  - servers
+  - projects
 
 patches:
   - path: argocd-config.yaml

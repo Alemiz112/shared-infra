@@ -1,0 +1,27 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shared-selfsigned-ca
+  namespace: cert-manager
+spec:
+  isCA: true
+  dnsNames:
+    - svc.home1.mznt.fede.host
+  secretName: shared-selfsigned-ca-cert
+  issuerRef:
+    name: shared-selfsigned-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+  subject:
+    organizations:
+      - "FEDE Host"
+  duration: 87600h # 10 years
+  renewBefore: 720h # 30 days
+  privateKey:
+    # By default, the private key won't be rotated automatically.
+    rotationPolicy: Always
+  secretTemplate:
+    annotations:
+      replicator.v1.mittwald.de/replication-allowed: "true"
+      replicator.v1.mittwald.de/replicate-to-matching: >
+        import-shared-ca=true

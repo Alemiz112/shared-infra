@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home1-mznt-main-app
+  namespace: argocd
+spec:
+  project: home1-mznt
+  source:
+    path: individual-clusters/clusters/alex/mznt-home1/gitops/production
+    repoURL: https://github.com/Alemiz112/shared-infra
+    targetRevision: master
+  destination:
+    namespace: mznt-home1-gitops
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

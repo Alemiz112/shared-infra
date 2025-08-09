@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: home1-mznt
+spec:
+  description: MZNT Home1 Cluster Project
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: "*"
+      name: home1.mznt.fede.host
+    - namespace: "mznt-home1-gitops"
+      server: https://kubernetes.default.svc

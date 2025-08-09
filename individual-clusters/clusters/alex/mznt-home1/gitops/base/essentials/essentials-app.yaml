@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: essentials-app
+spec:
+  project: home1-mznt
+  source:
+    path: individual-clusters/clusters/alex/mznt-home1/components/essentials
+    repoURL: https://github.com/Alemiz112/shared-infra
+    targetRevision: master
+  destination:
+    namespace: mznt-home1-gitops
+    name: home1.mznt.fede.host
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

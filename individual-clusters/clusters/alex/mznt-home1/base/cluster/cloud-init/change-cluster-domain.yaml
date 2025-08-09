@@ -13,6 +13,6 @@ spec:
           files:
             - path: /etc/rancher/rke2/config.yaml.d/90-cluster-domain.yaml
               content: |
-                       cluster-domain: "hrvstr1.mznt.cluster.fede.host"
+                       cluster-domain: "home1.mznt.fede.host"
               permissions: 0600
   paused: false
