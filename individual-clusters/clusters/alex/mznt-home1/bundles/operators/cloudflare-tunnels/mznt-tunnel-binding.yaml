@@ -1,0 +1,17 @@
+apiVersion: networking.cfargotunnel.com/v1alpha1
+kind: TunnelBinding
+metadata:
+  name: mznt-tunnel-binding
+subjects:
+  - name: wildcard-http
+    spec:
+      fqdn: "*.mznt.eu"
+      target: "http://traefik.ingress-controllers.svc.home1.mznt.fede.host:80"
+      noTlsVerify: true
+  - name: wildcard-https
+    spec:
+      fqdn: "*.mznt.eu"
+      target: "https://traefik.ingress-controllers.svc.home1.mznt.fede.host:443"
+tunnelRef:
+  kind: ClusterTunnel
+  name: mznt-tunnel

@@ -7,4 +7,4 @@ namespace: mznt-home1-gitops
 resources:
   - ../base/cluster
   - ../base/default-systems
-  # - ../base/operators
+  - ../base/operators

@@ -5,3 +5,6 @@ namespace: cloudflare-operator-system
 
 resources:
   - .././../../../../../base/vanilla/operators/cloudflare-tunnels
+  - mznt-tunnel.yaml
+  - mznt-tunnel-binding.yaml
+  - mznt-tunnel-secret.yaml

@@ -12,8 +12,5 @@ spec:
     namespace: mznt-home1-gitops
     name: home1.mznt.fede.host
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true

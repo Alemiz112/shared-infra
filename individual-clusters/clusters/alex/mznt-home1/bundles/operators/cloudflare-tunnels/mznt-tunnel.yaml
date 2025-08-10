@@ -1,0 +1,12 @@
+apiVersion: networking.cfargotunnel.com/v1alpha2
+kind: ClusterTunnel
+metadata:
+  name: mznt-tunnel
+spec:
+  newTunnel:
+    name: mznt-home1-cluster
+
+  cloudflare:
+    domain: mznt.eu
+    secret: mznt-tunnel-secret
+    accountId: 492e4a4993a58358a0c10671bc499e04
