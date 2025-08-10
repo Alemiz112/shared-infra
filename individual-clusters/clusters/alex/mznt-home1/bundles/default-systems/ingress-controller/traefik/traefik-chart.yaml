@@ -13,3 +13,15 @@ valuesInline:
 
   service:
     type: ClusterIP
+
+  ports:
+    web:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.16.0.0/16"
+    websecure:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.16.0.0/16"
