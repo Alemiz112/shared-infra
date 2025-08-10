@@ -1,0 +1,8 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shared-selfsigned-ca
+  namespace: cert-manager
+spec:
+  dnsNames:
+  - "svc.home1.mznt.fede.host"

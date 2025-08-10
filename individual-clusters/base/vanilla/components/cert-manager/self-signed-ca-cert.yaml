@@ -5,8 +5,6 @@ metadata:
   namespace: cert-manager
 spec:
   isCA: true
-  dnsNames:
-    - svc.home1.mznt.fede.host
   secretName: shared-selfsigned-ca-cert
   issuerRef:
     name: shared-selfsigned-issuer
