@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - cloud-init
   - ../../../../base/harvester/addons
+  - harvester-ingress-override.yaml
