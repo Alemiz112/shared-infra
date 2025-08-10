@@ -1,0 +1,11 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: percona-mysql-operator
+name: pxc-operator
+includeCRDs: true
+releaseName: pxc-operator
+version: 1.17.0
+repo: https://percona.github.io/percona-helm-charts/
+valuesInline:
+  replicaCount: 1 # see https://github.com/percona/percona-xtradb-cluster-operator/issues/2090

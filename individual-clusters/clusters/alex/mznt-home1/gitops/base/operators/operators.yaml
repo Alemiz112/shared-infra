@@ -9,8 +9,9 @@ spec:
     repoURL: https://github.com/Alemiz112/shared-infra
     targetRevision: master
   destination:
-    namespace: mznt-home1-gitops
+    namespace: operators
     name: home1.mznt.fede.host
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true

@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../../../../../base/vanilla/operators/percona-pg/helm
+
+patches:
+  - path: pg-operator-patch.yaml

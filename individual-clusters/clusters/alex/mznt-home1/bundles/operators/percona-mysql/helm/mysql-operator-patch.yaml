@@ -1,0 +1,14 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: percona-mysql-operator
+valuesInline:
+  replicaCount: 1
+  watchAllNamespaces: true
+  resources:
+    limits:
+      cpu: 200m
+      memory: 500Mi
+    requests:
+      cpu: "0"
+      memory: 20Mi

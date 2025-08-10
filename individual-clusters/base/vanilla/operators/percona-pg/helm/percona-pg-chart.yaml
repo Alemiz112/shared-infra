@@ -1,0 +1,11 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: percona-pg-operator
+name: pg-operator
+includeCRDs: true
+releaseName: pg-operator
+version: 2.6.0
+repo: https://percona.github.io/percona-helm-charts/
+valuesInline:
+  watchAllNamespaces: true
