@@ -5,6 +5,7 @@ namespace: cloudflare-operator-system
 namePrefix: cloudflare-operator-
 
 resources:
+  - namespace.yaml
   - https://github.com/adyanth/cloudflare-operator.git/config/crd?ref=v0.13.1
   - https://github.com/adyanth/cloudflare-operator.git/config/rbac?ref=v0.13.1
   - https://github.com/adyanth/cloudflare-operator.git/config/manager?ref=v0.13.1
