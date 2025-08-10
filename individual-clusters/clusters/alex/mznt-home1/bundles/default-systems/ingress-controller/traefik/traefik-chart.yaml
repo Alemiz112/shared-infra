@@ -1,0 +1,15 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: traefik-controller
+releaseName: traefik
+name: traefik
+includeCRDs: true
+version: 37.0.0
+repo: https://traefik.github.io/charts
+valuesInline:
+  deployment:
+    replicas: 1
+
+  service:
+    type: ClusterIP

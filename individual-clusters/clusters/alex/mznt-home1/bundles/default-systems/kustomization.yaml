@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ../../../../../base/vanilla/components/kube-system
   - cert-manager
-  # - ../../../../../base/vanilla/components/ingress-controller
+  - ../../../../../base/vanilla/components/ingress-controller

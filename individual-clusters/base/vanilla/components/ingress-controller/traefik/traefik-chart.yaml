@@ -1,0 +1,26 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: traefik-controller
+releaseName: traefik
+name: traefik
+includeCRDs: true
+version: 37.0.0
+repo: https://traefik.github.io/charts
+valuesInline:
+  deployment:
+    replicas: 3
+
+  providers:
+    kubernetesCRD:
+      allowCrossNamespace: true
+
+  additionalArguments:
+    - "--serversTransport.rootCAs=/certs/ca.crt"
+    # Traefik sometimes accesses pod ips directly
+    - "--serversTransport.insecureSkipVerify=true"
+
+  volumes:
+    - name: shared-selfsigned-ca-cert
+      mountPath: "/certs"
+      type: secret

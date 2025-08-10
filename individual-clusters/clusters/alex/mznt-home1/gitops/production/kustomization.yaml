@@ -6,5 +6,5 @@ namespace: mznt-home1-gitops
 
 resources:
   - ../base/cluster
-#  - ../base/essentials
-#  - ../base/operators
+  - ../base/default-systems
+  # - ../base/operators
