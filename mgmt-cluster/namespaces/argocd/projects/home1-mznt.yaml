@@ -14,5 +14,8 @@ spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
+  namespaceResourceWhitelist:
+    - group: 'argoproj.io'
+      kind: 'Application'
   sourceNamespaces:
     - "mznt-home1-gitops"
