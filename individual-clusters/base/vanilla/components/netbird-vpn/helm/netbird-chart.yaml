@@ -1,0 +1,35 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nebird-operator-chart
+name: kubernetes-operator
+releaseName: kubernetes-operator
+namespace: netbird-vpn
+includeCRDs: true
+version: 0.1.13
+repo: https://netbirdio.github.io/helms
+valuesInline:
+  managementURL: "https://vpn.mznt.eu"
+
+  operator:
+    replicaCount: 1
+
+  ingress:
+    # Allow exposing services through VPN
+    enabled: true
+    router:
+      enabled: true
+      replicas: 1
+    # Whether to expose kube-api
+    kubernetesAPI:
+      enabled: false
+
+    allowAutomaticPolicyCreation: false
+
+  netbirdAPI:
+    keyFromSecret:
+      name: netbird-api-token
+      key: "NB_API_KEY"
+
+  routingClientImage: netbirdio/netbird:rootless-latest
+

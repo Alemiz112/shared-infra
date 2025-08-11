@@ -5,3 +5,4 @@ resources:
   - ../../../../../base/vanilla/components/kube-system
   - cert-manager
   - ingress-controller
+  - netbird-vpn
