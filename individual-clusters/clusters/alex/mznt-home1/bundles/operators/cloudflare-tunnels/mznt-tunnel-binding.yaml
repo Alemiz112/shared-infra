@@ -12,7 +12,7 @@ subjects:
       proxyAddress: 127.0.0.1
       proxyPort: 0
       proxyType: ''
-      target: http://traefik.ingress-controllers.svc.home1.mznt.fede.host:80
+      target: http://traefik.ingress-controllers.svc.home-cluster.local:80
   - kind: Service
     name: wildcard-https
     spec:
@@ -22,7 +22,7 @@ subjects:
       proxyAddress: 127.0.0.1
       proxyPort: 0
       proxyType: ''
-      target: https://traefik.ingress-controllers.svc.home1.mznt.fede.host:443
+      target: https://traefik.ingress-controllers.svc.home-cluster.local:443
 tunnelRef:
   kind: ClusterTunnel
   name: mznt-tunnel

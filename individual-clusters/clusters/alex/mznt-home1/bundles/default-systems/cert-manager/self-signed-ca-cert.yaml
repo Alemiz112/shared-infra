@@ -5,4 +5,4 @@ metadata:
   namespace: cert-manager
 spec:
   dnsNames:
-  - "svc.home1.mznt.fede.host"
+  - "svc.home-cluster.local"
