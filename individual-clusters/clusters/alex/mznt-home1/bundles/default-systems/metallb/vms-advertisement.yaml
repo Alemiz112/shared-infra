@@ -1,0 +1,10 @@
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: vms-advertisement
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - vms-pool
+  communities:
+    - "64513:100"
