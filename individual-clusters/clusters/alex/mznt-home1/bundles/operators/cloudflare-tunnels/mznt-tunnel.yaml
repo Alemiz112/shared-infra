@@ -6,6 +6,9 @@ spec:
   newTunnel:
     name: mznt-home1-cluster
 
+  # https://github.com/cloudflare/cloudflared/issues/688
+  protocol: http2
+
   cloudflare:
     domain: mznt.eu
     secret: mznt-tunnel-secret
