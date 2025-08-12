@@ -5,7 +5,7 @@ metadata:
 name: pg-operator
 includeCRDs: true
 releaseName: pg-operator
-version: 2.6.0
+version: 2.7.0
 repo: https://percona.github.io/percona-helm-charts/
 valuesInline:
   watchAllNamespaces: true
