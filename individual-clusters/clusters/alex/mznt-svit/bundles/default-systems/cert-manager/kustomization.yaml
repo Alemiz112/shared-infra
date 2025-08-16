@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../../../../../../base/vanilla/components/cert-manager
+  - letsencrypt-issuer.yaml
 
 patches:
   - path: self-signed-ca-cert.yaml
