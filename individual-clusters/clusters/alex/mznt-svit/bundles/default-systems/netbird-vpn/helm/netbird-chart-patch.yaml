@@ -1,0 +1,8 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nebird-operator-chart
+valuesInline:
+  cluster:
+    dns: "svc.svit-cluster.local"
+    name: fede-mznt-svit

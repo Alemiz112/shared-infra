@@ -1,0 +1,24 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: traefik-controller
+releaseName: traefik
+name: traefik
+includeCRDs: true
+version: 37.0.0
+repo: https://traefik.github.io/charts
+valuesInline:
+  deployment:
+    replicas: 1
+
+  ports:
+    web:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.46.0.0/16"
+    websecure:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.46.0.0/16"

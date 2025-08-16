@@ -1,0 +1,8 @@
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: harvester-router
+spec:
+  myASN: 64515
+  peerASN: 64514
+  peerAddress: 10.10.10.1

@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: default-systems
+spec:
+  project: svit-mznt
+  source:
+    path: individual-clusters/clusters/alex/mznt-svit/bundles/default-systems
+    repoURL: https://github.com/Alemiz112/shared-infra
+    targetRevision: master
+  destination:
+    namespace: mznt-svit-gitops
+    name: svit.mznt.fede.host
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

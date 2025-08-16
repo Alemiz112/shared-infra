@@ -1,0 +1,14 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: percona-pg-operator
+valuesInline:
+  watchAllNamespaces: true
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: "0"
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi

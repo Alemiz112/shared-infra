@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: svit-mznt-main-app
+  namespace: argocd
+spec:
+  project: svit-mznt
+  source:
+    path: individual-clusters/clusters/alex/mznt-svit/gitops/production
+    repoURL: https://github.com/Alemiz112/shared-infra
+    targetRevision: master
+  destination:
+    namespace: mznt-svit-gitops
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

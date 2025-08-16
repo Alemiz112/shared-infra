@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mznt-infra
+spec:
+  project: svit-mznt
+  source:
+    path: clusters/mznt-svit/gitops
+    repoURL: https://github.com/Alemiz112/mznt-infra
+    targetRevision: master
+  destination:
+    namespace: mznt-svit-gitops
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
