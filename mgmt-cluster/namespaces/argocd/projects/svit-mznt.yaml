@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: svit-mznt
+spec:
+  description: MZNT Svit Cluster Project
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: "*"
+      name: svit.mznt.fede.host
+    - namespace: "mznt-svit-gitops"
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: 'argoproj.io'
+      kind: 'Application'
+  sourceNamespaces:
+    - "mznt-svit-gitops"
