@@ -7,3 +7,4 @@ resources:
   - ceph-cluster.yaml
   - ceph-pool.yaml
   - ceph-storageclass.yaml
+  - ceph-objectstore.yaml
