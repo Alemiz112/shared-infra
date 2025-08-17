@@ -22,3 +22,6 @@ valuesInline:
         insecure: false
         trustedIPs:
           - "172.46.0.0/16"
+  service:
+    annotations:
+      metallb.io/loadBalancerIPs: 10.10.11.2
