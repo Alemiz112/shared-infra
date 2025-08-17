@@ -1,0 +1,8 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: rook-ceph
+valuesInline:
+  csi:
+    provisionerReplicas: 1
+
