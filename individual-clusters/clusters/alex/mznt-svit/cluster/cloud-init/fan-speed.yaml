@@ -1,0 +1,39 @@
+apiVersion: node.harvesterhci.io/v1beta1
+kind: CloudInit
+metadata:
+  name: adjust-fan-speed
+spec:
+  matchSelector:
+    harvesterhci.io/managed: "true"
+  filename: 90-adjust-fan-speed.yaml
+  contents: |
+    stages:
+      network:
+        - name: "Install fan speed script and service"
+          files:
+            - path: /etc/systemd/system/fanspeed.service
+              content: |
+                [Unit]
+                Description=Fan Speed Adjust
+                
+                [Service]
+                Type=oneshot
+                ExecStart=/root/scripts/adjust-fan-speed.sh
+            - path: /etc/systemd/system/fanspeed.timer
+              content: |
+                [Unit]
+                Description=Fan speed loop
+                
+                [Timer]
+                OnBootSec=30
+                OnUnitActiveSec=60s
+                AccuracySec=1s
+                Unit=fanspeed.service
+                
+                [Install]
+                WantedBy=timers.target
+          commands:
+            - curl https://gist.githubusercontent.com/Alemiz112/fc2b60a6cac6df945ab8f920fc171272/raw/9a5929e56d47cf77b349cbc365a13514d441f18e/idrac_fanspeed.sh > /root/scripts/adjust-fan-speed.sh
+            - chmod +x /root/scripts/adjust-fan-speed.sh
+            - systemctl enable fanspeed.timer && systemctl start fanspeed.timer
+  paused: false
