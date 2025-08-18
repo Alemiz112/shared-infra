@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - percona-pg
-  - rook-ceph
+  # - rook-ceph
