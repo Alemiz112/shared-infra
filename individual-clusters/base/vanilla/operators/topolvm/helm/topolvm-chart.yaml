@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: topolvm-chart
+releaseName: topolvm
+name: topolvm
+version: 15.6.0
+namespace: topolvm-system
+repo: https://topolvm.github.io/topolvm
