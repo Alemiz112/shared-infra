@@ -25,3 +25,10 @@ valuesInline:
   service:
     annotations:
       metallb.io/loadBalancerIPs: 10.10.11.2
+
+  additionalArguments:
+    - "--serversTransport.rootCAs=/certs/ca.crt"
+    # Traefik sometimes accesses pod ips directly
+    - "--serversTransport.insecureSkipVerify=true"
+    # see https://github.com/argoproj/argo-cd/issues/14607
+    - "--providers.kubernetesingress.ingressendpoint.publishedservice=ingress-controllers/traefik"
