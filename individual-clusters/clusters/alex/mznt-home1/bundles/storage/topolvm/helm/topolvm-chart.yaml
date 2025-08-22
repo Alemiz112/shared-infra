@@ -1,0 +1,32 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: topolvm-chart
+valuesInline:
+  lvmd:
+    managed: true
+    env:
+      - name: LVM_SYSTEM_DIR
+        value: /tmp
+    deviceClasses:
+      - name: hdd-large
+        volume-group: vg0
+        default: true
+        spare-gb: 10
+        type: thin
+        thin-pool:
+          name: thinpool0
+          overprovision-ratio: 10.0
+
+  controller:
+    replicaCount: 1
+
+  storageClasses:
+    - name: lvm-large
+      storageClass:
+        fsType: xfs
+        isDefaultClass: false
+        volumeBindingMode: WaitForFirstConsumer
+        allowVolumeExpansion: true
+        additionalParameters:
+          "topolvm.io/device-class": "hdd-large"

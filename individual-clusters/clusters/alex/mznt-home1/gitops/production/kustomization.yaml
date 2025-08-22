@@ -8,4 +8,5 @@ resources:
   - ../base/cluster
   - ../base/default-systems
   - ../base/operators
+  - ../base/storage
   - ../base/mznt-infra
