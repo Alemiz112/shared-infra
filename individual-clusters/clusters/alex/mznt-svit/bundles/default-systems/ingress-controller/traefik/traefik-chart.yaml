@@ -25,6 +25,7 @@ valuesInline:
   service:
     annotations:
       metallb.io/loadBalancerIPs: 10.10.11.2
+    loadBalancerClass: metallb
 
   additionalArguments:
     - "--serversTransport.rootCAs=/certs/ca.crt"

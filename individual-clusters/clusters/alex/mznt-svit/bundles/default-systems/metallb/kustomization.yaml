@@ -8,3 +8,19 @@ resources:
   - vms-pool.yaml
   - vms-advertisement.yaml
   - bgp-peer.yaml
+
+patches:
+  - target:
+      kind: Deployment
+      name: controller
+    patch: |-
+        - op: add
+          path: "/spec/template/spec/containers/0/args/-"
+          value: "--lb-class=metallb"
+  - target:
+      kind: DaemonSet
+      name: speaker
+    patch: |-
+        - op: add
+          path: "/spec/template/spec/containers/0/args/-"
+          value: "--lb-class=metallb"
