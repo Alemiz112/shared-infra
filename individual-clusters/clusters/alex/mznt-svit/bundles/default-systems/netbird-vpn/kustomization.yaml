@@ -5,7 +5,8 @@ namespace: netbird-vpn
 
 resources:
   - ../../../../../../base/vanilla/components/netbird-vpn
-  - netbird-secret.yaml
+  - router
+  - netbird-api-secret.yaml
 
 generators:
-  - helm
+  - helm-operator
