@@ -5,6 +5,7 @@ namespace: ingress-controllers
 
 resources:
   - ../../../../../../base/vanilla/components/ingress-controller
+  - traefik/private-service.yaml
 
 generators:
   - traefik
