@@ -1,0 +1,24 @@
+name: Deploy DNSControl Changes
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'dns/dnsconfig.js'
+
+env:
+  DNSCONTROL_CF_ACCOUNTID: ${{ secrets.DNSCONTROL_CF_ACCOUNTID }}
+  DNSCONTROL_CF_APITOKEN: ${{ secrets.DNSCONTROL_CF_APITOKEN }}
+
+jobs:
+  update-dns:
+    name: Update DNS
+    runs-on: ubuntu-latest
+    container: "ghcr.io/stackexchange/dnscontrol:latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: DNSControl Push
+        run: |
+          cd dns/
+          dnscontrol push

@@ -42,3 +42,6 @@ charts/
 sealed-secret.pem
 sealed-secret.key
 self-signed.crt
+
+# DNS control local credentials
+dns/creds-local.json
