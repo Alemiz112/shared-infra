@@ -1,0 +1,22 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: k8up-chart
+releaseName: k8up
+name: k8up
+includeCRDs: true
+version: 4.8.5
+namespace: k8up
+repo: https://k8up-io.github.io/k8up
+valuesInline:
+  replicaCount: 1
+
+  k8up:
+    skipWithoutAnnotation: false
+
+  resources:
+    limits:
+      memory: 256Mi
+    requests:
+      cpu: 20m
+      memory: 128Mi

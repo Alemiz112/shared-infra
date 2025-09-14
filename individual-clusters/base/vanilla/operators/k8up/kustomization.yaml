@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: k8up
+
 resources:
-  - topolvm
-  # - ceph-storage Have a look at README
-  - k8up
+  - namespace.yaml
