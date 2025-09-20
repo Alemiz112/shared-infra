@@ -7,7 +7,7 @@ metadata:
   namespace: harvester-system
 spec:
   chart: harvester-csi-driver-lvm
-  enabled: true
+  enabled: false
   repo: https://charts.harvesterhci.io
   valuesContent: ''
   version: 0.1.5
