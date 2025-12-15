@@ -19,6 +19,10 @@ valuesInline:
     - "--serversTransport.rootCAs=/certs/ca.crt"
     # Traefik sometimes accesses pod ips directly
     - "--serversTransport.insecureSkipVerify=true"
+    # TODO: this will be better per transport ...
+    - '--entryPoints.web.transport.respondingTimeouts.readTimeout=3600s'
+    - '--entryPoints.web.transport.respondingTimeouts.writeTimeout=3600s'
+    - '--entryPoints.web.transport.respondingTimeouts.idleTimeout=3600s'
 
   volumes:
     - name: shared-selfsigned-ca-cert
