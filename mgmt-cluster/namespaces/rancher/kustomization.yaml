@@ -8,7 +8,7 @@ helmCharts:
     namespace: cattle-system
     includeCRDs: true
     releaseName: rancher
-    version: 2.12.0
+    version: 2.13.0
     repo: https://releases.rancher.com/server-charts/latest
     valuesInline:
       hostname: "rancher.fede.host"
