@@ -33,11 +33,14 @@ D("fede.host", REG_NONE,
     // MZNT Home Cluster
     A("home1.mznt", "10.10.1.2"),
     A("*.home1.mznt", "10.10.1.2"),
-    A("hui.home1.mznt", "10.10.0.10"),
+    A("hui.home1.mznt", "10.10.0.10"), // harvester ui
+    A("api-int.home1.mznt", "10.10.0.12"), // kube-api internal
     A("upsd-local.home1.mznt", "10.10.1.3"),
 
     // MZNT Svit Cluster
     A("svit.mznt", "10.10.11.2"),
     A("*.svit.mznt", "10.10.11.2"),
-    A("hui.svit.mznt", "10.10.10.2"),
+    A("hui.svit.mznt", "10.10.10.2"), // harvester ui
+    A("api-int.svit.mznt", "10.10.10.2"), // kube-api internal
+    // A("api.home1.mznt", "88.212.34.116"),
 );
