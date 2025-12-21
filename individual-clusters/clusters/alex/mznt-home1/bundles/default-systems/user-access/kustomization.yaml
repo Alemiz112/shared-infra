@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - ../../../../../../base/vanilla/components/argo-user-access
+  - alex.yaml
