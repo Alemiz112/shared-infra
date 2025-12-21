@@ -26,3 +26,4 @@ subjects:
 tunnelRef:
   kind: ClusterTunnel
   name: mznt-tunnel
+  disableDNSUpdates: true

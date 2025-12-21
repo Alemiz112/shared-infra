@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ../../../../../../base/vanilla/components/cert-manager
   - letsencrypt-issuer.yaml
+  - cloudflare-token.yaml
 
 patches:
   - path: self-signed-ca-cert.yaml
