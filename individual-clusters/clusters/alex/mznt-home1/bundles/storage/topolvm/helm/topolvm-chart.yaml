@@ -17,6 +17,14 @@ valuesInline:
         thin-pool:
           name: thinpool0
           overprovision-ratio: 10.0
+      - name: hdd-small
+        volume-group: vg1
+        default: false
+        spare-gb: 10
+        type: thin
+        thin-pool:
+          name: thinpool1
+          overprovision-ratio: 10.0
 
   controller:
     replicaCount: 1
@@ -30,3 +38,11 @@ valuesInline:
         allowVolumeExpansion: true
         additionalParameters:
           "topolvm.io/device-class": "hdd-large"
+    - name: lvm-small
+      storageClass:
+        fsType: xfs
+        isDefaultClass: false
+        volumeBindingMode: WaitForFirstConsumer
+        allowVolumeExpansion: true
+        additionalParameters:
+          "topolvm.io/device-class": "hdd-small"
