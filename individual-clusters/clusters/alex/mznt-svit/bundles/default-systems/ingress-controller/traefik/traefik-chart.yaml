@@ -11,17 +11,6 @@ valuesInline:
   deployment:
     replicas: 1
 
-  ports:
-    web:
-      forwardedHeaders:
-        insecure: false
-        trustedIPs:
-          - "172.46.0.0/16"
-    websecure:
-      forwardedHeaders:
-        insecure: false
-        trustedIPs:
-          - "172.46.0.0/16"
   service:
     annotations:
       metallb.io/loadBalancerIPs: 10.10.11.2
@@ -33,3 +22,25 @@ valuesInline:
     - "--serversTransport.insecureSkipVerify=true"
     # see https://github.com/argoproj/argo-cd/issues/14607
     - "--providers.kubernetesingress.ingressendpoint.publishedservice=ingress-controllers/traefik"
+
+  ports:
+    web:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.46.0.0/16"
+      transport:
+        respondingTimeouts:
+          readTimeout: 3600s
+          writeTimeout: 3600s
+          idleTimeout: 3600s
+    websecure:
+      forwardedHeaders:
+        insecure: false
+        trustedIPs:
+          - "172.46.0.0/16"
+      transport:
+        respondingTimeouts:
+          readTimeout: 3600s
+          writeTimeout: 3600s
+          idleTimeout: 3600s

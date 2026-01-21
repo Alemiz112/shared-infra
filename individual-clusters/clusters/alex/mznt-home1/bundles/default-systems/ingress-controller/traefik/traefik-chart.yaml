@@ -27,8 +27,22 @@ valuesInline:
         insecure: false
         trustedIPs:
           - "172.48.0.0/16"
+      transport:
+        respondingTimeouts:
+          readTimeout: 3600s
+          writeTimeout: 3600s
+          idleTimeout: 3600s
+      middlewares:
+        - ingress-controllers-default-middleware@kubernetescrd
     websecure:
       forwardedHeaders:
         insecure: false
         trustedIPs:
           - "172.48.0.0/16"
+      transport:
+        respondingTimeouts:
+          readTimeout: 3600s
+          writeTimeout: 3600s
+          idleTimeout: 3600s
+      middlewares:
+        - ingress-controllers-default-middleware@kubernetescrd
