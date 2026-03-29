@@ -8,3 +8,4 @@ resources:
   - netbird-vpn
   - metallb
   - user-access
+  - cloudflare-ddns
