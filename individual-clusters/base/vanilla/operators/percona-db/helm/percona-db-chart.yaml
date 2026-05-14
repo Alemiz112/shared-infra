@@ -1,0 +1,11 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: psmdb-operator
+name: psmdb-operator
+includeCRDs: true
+releaseName: psmdb-operator
+version: 1.22.0
+repo: https://percona.github.io/percona-helm-charts/
+valuesInline:
+  watchAllNamespaces: true
