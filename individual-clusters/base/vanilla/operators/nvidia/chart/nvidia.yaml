@@ -1,0 +1,10 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nvidia-operator-chart
+releaseName: gpu-operator
+name: gpu-operator
+includeCRDs: true
+version: v26.3.3
+namespace: gpu-operator
+repo: https://helm.ngc.nvidia.com/nvidia
